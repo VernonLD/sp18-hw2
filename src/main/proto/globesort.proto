@@ -6,11 +6,12 @@ option java_outer_classname = "GlobeSortProto";
 
 service GlobeSort {
   rpc Ping (Empty) returns (Empty) {}
-  rpc SortIntegers (IntArray) returns (double) {}
+  rpc SortIntegers (IntArray) returns (IntArray) {}
 }
 
 message Empty { }
 
 message IntArray {
   repeated int32 values = 1;
+  double time = 2;
 }
