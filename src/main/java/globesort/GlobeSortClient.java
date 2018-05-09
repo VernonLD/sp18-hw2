@@ -61,7 +61,7 @@ public class GlobeSortClient {
         long elapsedMilliSeconds = endTime - startTime;
         double elapsedSeconds = elapsedMilliSeconds / 1000.0;
         System.out.println("Application throughput : " + values.length * 1.0/elapsedSeconds);
-        System.out.println("Network throughput : " + (elapsedSeconds-response.getTime())/2.0);
+        System.out.println("Network throughput : " + values.length * 4.0/((elapsedSeconds-response.getTime())/2.0));
 
         System.out.println("Sorted array");
     }
