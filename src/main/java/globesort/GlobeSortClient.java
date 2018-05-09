@@ -41,11 +41,11 @@ public class GlobeSortClient {
     public void run(Integer[] values) throws Exception {
         System.out.println("Pinging " + serverStr + "...");
         //compute ping
-        long startTime = SystemClock.elapsedRealtime();
+        long startTime = System.currentTimeMillis();
 
         serverStub.ping(Empty.newBuilder().build());
         //compute ping
-        long endTime = SystemClock.elapsedRealtime();
+        long startTime = System.currentTimeMillis();
         long elapsedMilliSeconds = endTime - startTime;
         double elapsedSeconds = elapsedMilliSeconds / 1000.0;
         System.out.println("Latency : " + elapsedSeconds);
@@ -55,11 +55,11 @@ public class GlobeSortClient {
         System.out.println("Requesting server to sort array");
         IntArray request = IntArray.newBuilder().addAllValues(Arrays.asList(values)).build();
 
-        //compute ping
-        long startTime = SystemClock.elapsedRealtime();
+        //compute time
+        long startTime = System.currentTimeMillis();
         IntArray response = serverStub.sortIntegers(request);
-        //compute ping
-        long endTime = SystemClock.elapsedRealtime();
+        //compute time
+        long endTime = System.currentTimeMillis();
         long elapsedMilliSeconds = endTime - startTime;
         double elapsedSeconds = elapsedMilliSeconds / 1000.0;
         System.out.println("Application throughput : " + values.length * 1.0/elapsedMilliSeconds);
