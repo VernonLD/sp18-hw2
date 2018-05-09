@@ -46,7 +46,7 @@ public class GlobeSortClient {
         serverStub.ping(Empty.newBuilder().build());
         //compute ping
         long endTime = System.currentTimeMillis();
-        System.out.println("Latency : " + (endTime - startTime)/1000.0);
+        System.out.println("Latency : " + (endTime - startTime)/2000.0);
 
         System.out.println("Ping successful.");
 
